@@ -21,9 +21,11 @@ class Item
 end
 
 @breads = Item.new(50)
+@eggs = Item.new(50)
 
 def buy_bread(count = 1)
   puts 'パンを買いに来ました。'
+  count = 12 if @eggs.exists?
   result = @breads.buy(count)
   puts "#{result}コ購入！"
 end
